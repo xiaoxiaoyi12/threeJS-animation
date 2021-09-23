@@ -56,7 +56,7 @@ function init() {
 
   const loader = new GLTFLoader();
   const textureLoader = new THREE.TextureLoader();
-  loader.load( 'models/gltf/Soldier.glb', function ( gltf ) {
+  loader.load( '/textures/glb/Soldier.glb', function ( gltf ) {
 //   loader.load('/textures/glb/stacy.glb', function (gltf) {
 //     textureLoader.load('/textures/glb/stacy.jpg', (texture) => {
       model = gltf.scene;
