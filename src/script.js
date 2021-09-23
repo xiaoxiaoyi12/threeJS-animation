@@ -56,13 +56,13 @@ function init() {
 
   const loader = new GLTFLoader();
   const textureLoader = new THREE.TextureLoader();
-  // loader.load( 'models/gltf/Soldier.glb', function ( gltf ) {
-  loader.load('/textures/glb/stacy.glb', function (gltf) {
-    textureLoader.load('/textures/glb/stacy.jpg', (texture) => {
+  loader.load( 'models/gltf/Soldier.glb', function ( gltf ) {
+//   loader.load('/textures/glb/stacy.glb', function (gltf) {
+//     textureLoader.load('/textures/glb/stacy.jpg', (texture) => {
       model = gltf.scene;
-      console.log(model)
-      model.children[0].children[1].material.map = texture
-      model.children[0].children[1].material.map.flipY=false;
+//       console.log(model)
+//       model.children[0].children[1].material.map = texture
+//       model.children[0].children[1].material.map.flipY=false;
       scene.add(model);
 
       model.traverse(function (object) {
@@ -81,7 +81,7 @@ function init() {
         values.push(radius * 0.9 * Math.sin(i), 0, radius * 0.9 * Math.cos(i))
         scales.push(0.3, 0.3, 0.3)
         // angles.push(new THREE.Euler(i,0,i))
-        angles.push(Math.PI / 2 + i)
+        angles.push(-Math.PI / 2 + i)
       }
       const posTrack = new THREE.KeyframeTrack('model.position', times, values);
       const scaleTrack = new THREE.KeyframeTrack('model.scale', times, scales);
@@ -100,7 +100,7 @@ function init() {
       AnimationAction.play()
       AnimationAction1.play()
       animate();
-    });
+//     });
   });
 
   renderer = new THREE.WebGLRenderer({ antialias: true });
